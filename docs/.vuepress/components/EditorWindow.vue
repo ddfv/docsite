@@ -90,7 +90,6 @@ export default {
       background-color rgb(40, 44, 52)
   .editor-codes
     padding 0 10px
-    overflow scroll
     pre
       background-color transparent
       margin 0
