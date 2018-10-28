@@ -80,6 +80,7 @@ export default {
     padding 0 10px
     height 2em
     line-height 2em
+    font-size 13px
     background-color rgb(33, 37, 43)
     &:hover
       background-color lighten(rgb(40, 44, 52), 5)

@@ -29,7 +29,7 @@ export default {
 export default {
   data () {
     return {
-      hello: 'Hello, Gorgeous!'
+      hello: 'Hi there!'
     }
   }
 }
@@ -61,7 +61,7 @@ export default {
 }`
         }
       ],
-      hello: 'Hello, Gorgeous!'
+      hello: 'Hi, there!'
     }
   }
 }
