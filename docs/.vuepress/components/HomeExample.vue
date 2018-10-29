@@ -1,11 +1,11 @@
 <template>
   <div class="home-example columns">
     <div class="column">
-      <EditorWindow :files="files"/>
+      <EditorWindow :files="files" :msg.sync="msg" />
     </div>
     <div class="column">
       <BrowserWindow :address="address">
-        <h1>{{ hello }}</h1>
+        {{ msg }}
       </BrowserWindow>
     </div>
   </div>
@@ -18,11 +18,12 @@ export default {
       address: 'localhost:4000',
       files: [
         {
-          name: 'pages/index.vue',
+          name: 'index.vue',
+          msg: 'Hi there!',
           lang: 'html',
           code: `<template>
   <div>
-    <h1>{{ hello }}</h1>
+    {{ hello }}
   </div>
 <\/tempalte>
 <script>
@@ -36,15 +37,23 @@ export default {
 <\/script>`
         },
         {
-          name: '.gitignore',
-          lang: 'js',
-          code: `dist`
+          name: 'about.vue',
+          msg: 'Who? Me?',
+          lang: 'html',
+          code: `<template>
+  <div>
+    Who? Me?
+  </div>
+<\/tempalte>`
         },
         {
           name: 'dvan.config.js',
           lang: 'js',
           code: `module.exports = {
-  title: 'App'
+  html: {
+    title: 'App'
+  },
+  pagesDir: './'
 }`
         },
         {
@@ -56,12 +65,12 @@ export default {
     "build": "dvan build"
   },
   "devDependencies": {
-    "dvan": "@next"
+    "dvan": "next"
   }
 }`
         }
       ],
-      hello: 'Hi, there!'
+      msg: ''
     }
   }
 }

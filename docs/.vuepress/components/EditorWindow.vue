@@ -29,6 +29,10 @@ export default {
     files: {
       type: Array,
       required: true
+    },
+    msg: {
+      type: String,
+      required: true
     }
   },
 
@@ -43,6 +47,9 @@ export default {
       return this.files[this.currentIndex]
     },
     code () {
+      if (this.currentFile.msg) {
+        this.$emit('update:msg', this.currentFile.msg)
+      }
       return Prism.highlight(
         this.currentFile.code,
         Prism.languages[this.currentFile.lang],
