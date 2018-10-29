@@ -17,6 +17,10 @@ displayAllHeaders = true
   link = "/config/"
 
   [[themeConfig.nav]]
+  text = "Plugins"
+  link = "/plugins/"
+
+  [[themeConfig.nav]]
   text = "Versions"
 
     [[themeConfig.nav.items]]

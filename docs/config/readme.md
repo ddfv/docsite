@@ -4,172 +4,92 @@ sidebar: auto
 
 # Config
 
-## Basic Config
-
-### title
+## outDir
 - Type: `string`
-- Default: `''`
+- Default: `dist`
 
-Title for the site
+The directory to generate App files.
 
-### description
-- Type: `string`
-- Default: `''`
-
-Description for the site
-
-### head
-- Type: `array`
-- Default: `[]`
-  - `[tagName, { attrName: attrValue }, innerHTML?]`
-
-Extra tags in `<head>`. For example, to add a custom favicon:
-
-```js
-module.exports = {
-  head: [
-    ['link', { rel: 'icon', href: '/logo.png' }]
-  ]
-}
-```
-
-### host
-- Type: `string`
-- Default: `0.0.0.0`
-
-The host for the dev server, you can set it in command-line `--host 0.0.0.0`
-
-### port
-- Type: `number`
-- Default: `8080`
-
-Same with [host](#host), port auto matches from `8080`
-
-### pagesDir
-- Type: `string`
-- Default: `pages`
-
-The directory to your page files
-
-### exts
-- Type: `array`
-- Default: `['vue']`
-
-The page file extension type under [pagesDir](#pagesdir), for example `['vue', 'js']` will auto load vue and js extension file as page
-
-### pwa
-- Type: `boolean|object`
-- Default: `false`
-
-PWA(Progressive Web Application) support  
-If set it `true` or any `object` will enable PWA for your site
-
-```js
-// Default values when `true`
-{
-  // Update notifier config
-  updateText: 'New content is available.',
-  updateButtonText: 'Refresh'
-}
-```
-
-::: warning PWA NOTES
-Only enabled in production  
-Also, service worker can only be registered under HTTPs URLs
-:::
-
-This `pwa` options only do:
-- Caches content
-- Offline use
-- Notify update content
-
-To make your site fully PWA-compliant, you will need to provide the [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) and icons in `pwa/`, `manifest.json` will auto inject each html file
-```
-.
-├── pages
-├── pwa
-│   │── images
-│   └── manifest.json
-├── dvan.config.js
-└── package.json
-```
-
-Override `sw-update-popup` with your own style:
-```css
-.sw-update-popup {}
-/* <transition name="sw-update-popup"> */
-```
-
-### root
+## publicPath
 - Type: `string`
 - Default: `/`
 
-The root path of your site
+The all assets file URL prefix used in generated HTML files. It's usually use to deploy to a site under sub-path, i.e. `https://yoursite.com/rest/`, that should be set it to `/rest/`.
 
-If you want to deploy your site under a sub path, for example `https://site.com/website/`, you should set it to `/website/`
-
-
-## Build Pipeline
-
-### postcss
+## html
 - Type: `object`
-- Default: `{ plugins: [require('autoprefixer')] }`
 
-Options for [post-loader](https://github.com/postcss/postcss-loader)
+Basically options:
 
-::: warning
-This value will overwrite default value and you need to include it yourself
+- title
+  - Type: `string`
+  - Default: `'Dvan App'`
+  - The title for the `<title></title>` in the generated HTML file.
+- template
+  - Type: `string<path>`
+  - Default: `built-in template`
+  - The template HTML file to render the generated HTML file.
+- ...fully options in [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin#options)
 
-Same with all following CSS Pre-Processor
-:::
+## pagesDir
+- Type: `string<path>`
+- Default: `pages`
 
-### stylus
+The directory to page files.
+
+## sourceMap
 - Type: `object`
-- Default: `{ preferPathResolve: 'webpack' }`
+- Default: `true`
 
-Options for [stylus-loader](https://github.com/shama/stylus-loader)
+Sourcemaps for `.js` and `.css` files are also generated when the App is built.
 
-### sass
+## minimize
+- Type: `boolean|object`
+- Default: `'auto'` which means `true` in production build, `false` otherwise
+
+Minimize bundled `.js` and `.css` files.
+If set it an object please check out the following 2 options
+
+## minimize.js
 - Type: `object`
-- Default: `{ indentedSyntax: true }`
 
-Options for [sass-loader](https://github.com/webpack-contrib/sass-loader) to load `.sass` files
+Options for [uglifyjs-webpack-plugin](https://www.npmjs.com/package/uglifyjs-webpack-plugin#options)
 
-### scss
+## minimize.css
 - Type: `object`
-- Default: `{}`
 
-Options for [sass-loader](https://github.com/webpack-contrib/sass-loader) to load `.scss` files
+Options for [optimize-css-assets-webpack-plugin](https://www.npmjs.com/package/optimize-css-assets-webpack-plugin)
 
-### less
+## constants
+
+## devServer
 - Type: `object`
-- Default: `{}`
+- Default: `{ host: '0.0.0.0', port: 4000 }`
 
-Options for [less-loader](https://github.com/webpack-contrib/less-loader)
+Options for [webpack-dev-server](https://webpack.js.org/configuration/dev-server/#devserver)
 
-### chainWebpack
-- Type: `function`
-- Default: `undefined`
+## css.extract
+- Type: `boolean`
+- Default: `'auto'` which means `true` in production build, `false` otherwise
 
-Internal webpack config with [webpack-chain](https://github.com/neutrinojs/webpack-chain)
+Whether to extract CSS into standalone `.css` file(s).
+
+## css.loaderOptions
+- Type: `object`
 
 ```js
 module.exports = {
-  chainWebpack: config => {
-    // configure something
+  css: {
+    loaderOptions: {
+      // For css-loader
+      css: {},
+      // For sass-loader
+      sass: {},
+      // For less-loader
+      less: {},
+      // For stylus-loader
+      stylus: {}
+    }
   }
 }
 ```
-
-::: tip A part of chainWebpack reference
-- `entry`
-  - `app`
-- `resolve`
-  - `alias`
-    - `@app` root dir (**not [root](#root)**)
-    - `@pages` pages dir (depends on [pagesDir](#pagesdir))
-  - `extensions`
-    - `.vue`
-    - `.js`
-    - `.json`
-:::
