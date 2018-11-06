@@ -61,6 +61,7 @@ Options for [uglifyjs-webpack-plugin](https://www.npmjs.com/package/uglifyjs-web
 Options for [optimize-css-assets-webpack-plugin](https://www.npmjs.com/package/optimize-css-assets-webpack-plugin)
 
 ## constants
+- Type: `object`
 
 ## devServer
 - Type: `object`
