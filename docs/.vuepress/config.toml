@@ -30,7 +30,7 @@ displayAllHeaders = true
     link = "https://v1.3.x--dvan.evila.me"
 
   [[themeConfig.sidebar]]
-  title = "Getting Started"
+  title = "Basics"
   collapsable = false
   children = [
     "/guide/introduction",
