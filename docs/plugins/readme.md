@@ -10,7 +10,7 @@ sidebar: auto
 ```js
 exports.name = 'my-plugin'
 
-exports.extend = (api, options) => {
+exports.extend = api => {
   // ...
 }
 ```
