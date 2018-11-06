@@ -46,6 +46,22 @@ module.exports = {
 }
 ```
 
+With local plugin
+```js
+module.exports = {
+  plugins: [
+    require('./plugins/my-plugin'),
+    {
+      // Also works with an object
+      name: 'my-second-plugin',
+      extend: api => {
+        // ...
+      }
+    }
+  ]
+}
+```
+
 More plugins see [Plugins list](#plugins-list) for now.
 
 
