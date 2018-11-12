@@ -17,13 +17,13 @@ exports.extend = api => {
 
 ### Properties
 
-### name
+#### name
 - Type: `String`
 - Required: `false`
 
 Name your plugin to distinguish all plugins in use.
 
-### extend
+#### extend
 - Type: `(api: PluginAPI, options: any) => void`
 - Required: `true`
 
@@ -65,35 +65,6 @@ module.exports = {
 More plugins see [Plugins list](#plugins-list) for now.
 
 
-## Plugins list
-
-### SSG
-> Static site generate
-
-- Package: `@dvan/plugin-ssg`
-- Command: `generate`
-
-Add a new command to `package.json`
-
-```json {5}
-{
-  "script": {
-    "dev": "dvan dev",
-    "build": "dvan build",
-    "generate": "dvan generate"
-  }
-}
-```
-
-### PWA
-> Progressive web application
-
-TODO
-
-### Blogging
-TODO
-
-
 ## Plugin API
 
 ### api.command
@@ -121,3 +92,55 @@ api.chainWebpack(config => {
   // `config` is a webpack-chain instance
 })
 ```
+
+
+## Plugins list
+
+### SSG <Badge text="alpha" type="warning"/>
+> Static site generate
+
+- Package: `@dvan/plugin-ssg`
+- Command: `generate`
+
+Add a new command to `package.json`
+
+```json {5}
+{
+  "script": {
+    "dev": "dvan dev",
+    "build": "dvan build",
+    "generate": "dvan generate"
+  }
+}
+```
+
+To generate static site
+
+```bash
+yarn generate
+```
+
+#### Extra
+
+head meta for [vue-meta](https://github.com/declandewet/vue-meta/#readme)
+
+```vue {3-6}
+<script>
+export default {
+  head: {
+    title: 'Current page own title',
+    meta: [...]
+  }
+}
+</script>
+```
+
+Or you can set global meta in `config.html`, it will be apply to all generated html files.
+
+### PWA
+> Progressive web application
+
+TODO
+
+### Blogging
+TODO

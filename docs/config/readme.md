@@ -6,7 +6,7 @@ sidebar: auto
 
 ## outDir
 - Type: `string`
-- Default: `dist`
+- Default: `__dist`
 
 The directory to generate App files.
 
@@ -37,11 +37,17 @@ Basically options:
 
 The directory to page files.
 
+## match
+- Type: `string` `RegExp`
+- Default: `vue,js`
+
+It used to match page components.
+
 ## sourceMap
-- Type: `object`
+- Type: `boolean`
 - Default: `true`
 
-Sourcemaps for `.js` and `.css` files are also generated when the App is built.
+Sourcemaps for `.js` and `.css` files are also generated when compiled.
 
 ## minimize
 - Type: `boolean|object`
@@ -62,6 +68,8 @@ Options for [optimize-css-assets-webpack-plugin](https://www.npmjs.com/package/o
 
 ## constants
 - Type: `object`
+
+Create global constants which can be configured at compile time.
 
 ## devServer
 - Type: `object`
@@ -94,3 +102,8 @@ module.exports = {
   }
 }
 ```
+
+## chainWebpack
+- Type: `(config => WebpackChain, opts: Opts) => void`
+
+Internal webpack config with [webpack-chain](https://github.com/neutrinojs/webpack-chain)

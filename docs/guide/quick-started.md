@@ -22,13 +22,13 @@ Then add two scripts to `package.json`
 }
 ```
 
-You can now start with:
+You can now start with
 ```bash
 yarn dev
 # default is http://localhost:4000
 ```
 
-To generate static assets:
+To build your App
 ```bash
 yarn build
 ```
