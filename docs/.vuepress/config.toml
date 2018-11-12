@@ -6,6 +6,7 @@ host = "192.168.31.178"
 [themeConfig]
 repo = "ddfv/dvan"
 repoLabel = "GitHub"
+docsRepo = "ddfv/docsite"
 docsDir = "docs"
 editLinks = true
 lastUpdated = true
