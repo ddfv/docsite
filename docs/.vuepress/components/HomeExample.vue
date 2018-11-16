@@ -65,7 +65,7 @@ export default {
     "build": "dvan build"
   },
   "devDependencies": {
-    "dvan": "next"
+    "dvan": "@next"
   }
 }`
         }
