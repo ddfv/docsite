@@ -1,41 +1,33 @@
-> Out of date
-
 # Directory Structure
 
-A basic project structure looks like:
+A started-up project directory structure looks like:
 ```
 .
 ├── pages
-│   │── 404.vue     # optional
+│   │── 404.vue     # optional, if exists will instead of default 404 page.
 │   └── index.vue
-├── .gitignore
 ├── dvan.config.js
 └── package.json
 ```
 
-| File / Directory | Description |
-| --- | --- |
-| pages/ | Write your pages |
-| dvan.config.js | Configure the website |
-| package.json | Define npm scripts and dependencies |
+You can configure the pages directory with `pagesDir` field in `dvan.config.js`
 
-You can configure the `pages` directory you want, configured the `pagesDir` field in `dvan.config.js`.
+Example
 
-Here an example:
 ```js
 module.exports = {
   pagesDir: 'src/pages'
 }
 ```
+
 Will be resolve under `src/pages` directory Vue components as pages:
+
 ```
 .
 ├── src
 │   └── pages
 │       │── 404.vue     # optional
-│       │── about.vue
 │       └── index.vue
-├── .gitignore
 ├── dvan.config.js
 └── package.json
 ```

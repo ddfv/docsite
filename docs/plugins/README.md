@@ -135,7 +135,7 @@ export default {
 </script>
 ```
 
-Or you can set global meta in `config.html`, it will be apply to all generated html files.
+Or you can set global meta with `html` field in `dvan.config.js`, it will be apply to all generated html files.
 
 ### PWA
 > Progressive web application
