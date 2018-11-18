@@ -4,9 +4,9 @@ contentLoading = true
 host = "192.168.31.178"
 
 [themeConfig]
-repo = "ddfv/dvan"
+repo = "dvanjs/dvan"
 repoLabel = "GitHub"
-docsRepo = "ddfv/docsite"
+docsRepo = "dvanjs/docsite"
 docsDir = "docs"
 editLinks = true
 lastUpdated = true
