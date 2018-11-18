@@ -13,7 +13,7 @@ lastUpdated = true
 displayAllHeaders = true
 
   [[themeConfig.nav]]
-  text = "Guild"
+  text = "Guide"
   link = "/guide/introduction"
 
   [[themeConfig.nav]]
