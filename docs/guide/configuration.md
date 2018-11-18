@@ -41,7 +41,7 @@ export default ({
 
 Structure looks like
 
-```bash
+```sh
 .
 ├── enhancements
 │   ├── ajax.js

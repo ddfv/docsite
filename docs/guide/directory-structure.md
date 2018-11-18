@@ -3,7 +3,7 @@
 ## Basic
 
 A started-up project directory structure looks like:
-```bash
+```sh
 .
 ├── pages
 │   │── 404.vue       # optional, if exists will instead of default 404 page.
@@ -25,7 +25,7 @@ module.exports = {
 
 Will be resolve under `src/pages` directory Vue components as pages:
 
-```bash
+```sh
 .
 ├── src
 │   └── pages
