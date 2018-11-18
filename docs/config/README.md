@@ -74,6 +74,7 @@ Create global constants which can be configured at compile time.
 ## devServer
 - Type: `object`
 - Default: `{ host: '0.0.0.0', port: 4000 }`
+- CLI: `--host --port`
 
 Options for [webpack-dev-server](https://webpack.js.org/configuration/dev-server/#devserver)
 
@@ -102,6 +103,13 @@ module.exports = {
   }
 }
 ```
+
+## jsx
+- Type: `boolean`
+- Default: `false`
+- CLI: `--jsx`
+
+Make app support JSX syntax. See [jsx-guide](/guide/advanced/jsx.md).
 
 ## chainWebpack
 - Type: `(config => WebpackChain, opts: Opts) => void`

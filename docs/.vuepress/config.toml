@@ -32,11 +32,18 @@ displayAllHeaders = true
     link = "https://v1.3.x--dvan.evila.me"
 
   [[themeConfig.sidebar]]
-  title = "Basics"
+  title = "Basic"
   collapsable = false
   children = [
     "/guide/introduction",
     "/guide/quick-started",
     "/guide/configuration",
     "/guide/directory-structure"
+  ]
+
+  [[themeConfig.sidebar]]
+  title = "Advanced"
+  collapsable = false
+  children = [
+    "/guide/advanced/jsx"
   ]
