@@ -5,8 +5,8 @@
 Install dvan as a local dependency inside a project.
 ```sh
 cd your-project
-yarn add dvan@next -D
-# npm i -D dvan@next
+yarn add dvan@next --dev
+# npm i --dev dvan@next
 ```
 
 Then add two scripts to `package.json`
