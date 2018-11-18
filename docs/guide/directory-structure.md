@@ -1,5 +1,7 @@
 # Directory Structure
 
+## Basic
+
 A started-up project directory structure looks like:
 ```bash
 .
@@ -34,4 +36,4 @@ Will be resolve under `src/pages` directory Vue components as pages:
 └── package.json
 ```
 
-You can have reference via [dvan-example](https://github.com/dvanjs/dvan-example)
+You can have reference via [dvan-example](https://github.com/dvanjs/dvan-example) directly.
