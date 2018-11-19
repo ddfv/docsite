@@ -1,0 +1,73 @@
+title: Dvan
+description: Config-free to build your Vue App
+contentLoading: true
+host: '192.168.31.178'
+
+locales:
+  /: {}
+  /zh/:
+    lang: zh-CN
+    description: 无需配置构建你的 Vue 应用.
+
+themeConfig:
+  repo: dvanjs/dvan
+  repoLabel: GitHub
+  docsRepo: dvanjs/docsite
+  docsDir: docs
+  editLinks: true
+  lastUpdated: true
+  displayAllHeaders: true
+  locales:
+    /:
+      selectText: Languages
+      label: English
+      nav:
+        - text: Guide
+          link: /guide/introduction
+        - text: Config
+          link: /config/
+        - text: Plugins
+          link: /plugins/
+        - text: Versions
+          items:
+            - text: v1.3.x
+              link: 'http://v1.3.x--dvan.evila.me'
+      sidebar:
+        - title: Basic
+          collapsable: false
+          children:
+            - /guide/introduction
+            - /guide/quick-started
+            - /guide/configuration
+            - /guide/directory-structure
+        - title: Advanced
+          collapsable: false
+          children:
+            - /guide/advanced/jsx
+    /zh/:
+      selectText: 选择语言
+      label: 简体中文
+      editLinkText: 编辑此页面
+      nav:
+        - text: 指南
+          link: /zh/guide/introduction
+        - text: 配置
+          link: /zh/config/
+        - text: 插件
+          link: /zh/plugins/
+        - text: 版本
+          items:
+            - text: v1.3.x
+              link: 'http://v1.3.x--dvan.evila.me'
+      sidebar:
+        - title: 基本
+          collapsable: false
+          children:
+            - /zh/guide/introduction
+            - /zh/guide/quick-started
+            - /zh/guide/configuration
+            - /zh/guide/directory-structure
+        - title: 进阶
+          collapsable: false
+          children:
+            - /zh/guide/advanced/jsx
