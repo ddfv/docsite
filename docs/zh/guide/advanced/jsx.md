@@ -2,7 +2,7 @@
 
 默认我们使用 [vuejs/jsx](https://github.com/vuejs/jsx) 使应用支持JSX.
 
-```sh
+```bash
 yarn add @vue/babel-preset-jsx @vue/babel-helper-vue-jsx-merge-props --dev
 ```
 

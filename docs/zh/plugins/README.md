@@ -34,7 +34,7 @@ exports.extend = api => {
 这是一个应用插件的例子 [plugin-ssg](#ssg)
 
 安装
-```sh
+```bash
 yarn add @dvan/plugin-ssg --dev
 ```
 
@@ -117,7 +117,7 @@ api.chainWebpack(config => {
 
 生成静态资源
 
-```sh
+```bash
 yarn generate
 ```
 

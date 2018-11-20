@@ -2,7 +2,7 @@
 
 In default, we use [vuejs/jsx](https://github.com/vuejs/jsx) to make app support JSX.
 
-```sh
+```bash
 yarn add @vue/babel-preset-jsx @vue/babel-helper-vue-jsx-merge-props --dev
 ```
 

@@ -3,7 +3,7 @@
 ## Installation
 
 Install dvan as a local dependency inside a project.
-```sh
+```bash
 cd your-project
 yarn add dvan@next --dev
 # npm i --dev dvan@next
@@ -23,12 +23,12 @@ Then add two scripts to `package.json`
 ```
 
 You can now start with
-```sh
+```bash
 yarn dev
 # default is http://localhost:4000
 ```
 
 To build your App
-```sh
+```bash
 yarn build
 ```

@@ -3,7 +3,7 @@
 ## 安装
 
 安装 Dvan 到你项目中为本地开发依赖.
-```sh
+```bash
 cd your-project
 yarn add dvan@next --dev
 # npm i --dev dvan@next
@@ -23,12 +23,12 @@ yarn add dvan@next --dev
 ```
 
 即可启动开发模式
-```sh
+```bash
 yarn dev
 # default is http://localhost:4000
 ```
 
 构建你的应用
-```sh
+```bash
 yarn build
 ```

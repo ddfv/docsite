@@ -33,7 +33,7 @@ See [PluginAPI](#plugin-api)
 Here an example for [plugin-ssg](#ssg)
 
 Install
-```sh
+```bash
 yarn add @dvan/plugin-ssg --dev
 ```
 
@@ -116,7 +116,7 @@ Add a new command to `package.json`
 
 To generate static site
 
-```sh
+```bash
 yarn generate
 ```
 

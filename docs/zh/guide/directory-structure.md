@@ -3,7 +3,7 @@
 ## 基本
 
 一个初始项目目录结构大致如下:
-```sh
+```bash
 .
 ├── pages
 │   │── 404.vue       # 可选, 如果存在则替换默认 404 页面.
@@ -25,7 +25,7 @@ module.exports = {
 
 会将`src/pages`下的所有 Vue 组件解释为页面.
 
-```sh
+```bash
 .
 ├── src
 │   └── pages
