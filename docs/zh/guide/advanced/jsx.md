@@ -2,8 +2,10 @@
 
 默认我们使用 [vuejs/jsx](https://github.com/vuejs/jsx) 使应用支持JSX.
 
+由于问题 [#12](https://github.com/vuejs/jsx/issues/12), 所以我们使用自己的仓库来解决这个问题, 或许我们会在这个问题得到修复之后继续使用 Vue 官方仓库.
+
 ```bash
-yarn add @vue/babel-preset-jsx @vue/babel-helper-vue-jsx-merge-props --dev
+yarn add @dvan/babel-preset-jsx --dev
 ```
 
 无需配置`babel.config.js`
@@ -17,14 +19,5 @@ module.exports = {
 ```
 
 或者在CLI添加`--jsx`选项.
-
-::: danger 警告
-根据问题 [#12](https://github.com/vuejs/jsx/issues/12). 你需要做几个步骤:
-
-1. `cd node_modules/@vue/babel-preset-jsx`
-2. `yarn && yarn build` or `npm i && npm run build`
-3. `cd ../../../`
-4. run dev server or build app
-:::
 
 然后就可以根据这些语法 [syntax](https://github.com/vuejs/jsx#syntax) 编写JSX了.
