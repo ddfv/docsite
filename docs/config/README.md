@@ -4,6 +4,12 @@ sidebar: auto
 
 # Config
 
+## srcDir
+- Type: `string`
+- Default: `src`
+
+The source directory of your App.
+
 ## outDir
 - Type: `string`
 - Default: `__dist`
@@ -30,12 +36,6 @@ Basically options:
   - Default: `built-in template`
   - The template HTML file to render the generated HTML file.
 - ...fully options in [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin#options)
-
-## pagesDir
-- Type: `string<path>`
-- Default: `pages`
-
-The directory to page files.
 
 ## match
 - Type: `string` `RegExp`
