@@ -56,8 +56,8 @@ Split plugin-file will be easy to maintain.
 
 ## Aliases
 
-|Directory|Alias|Default|Configurable|
-|-|-|-|-|
-|srcDir|`@`|`src`|O|
-|rootDir|`@@`|`process.cwd()`|X|
-|pagesDir|`@pages`||X|
+|Directory|Description|Alias|Default|Configurable|
+|-|-|-|-|-|
+|src|App sources|`@`|`src`|O|
+|root|project root|`@@`|`process.cwd()`|X|
+|pages|pages directory|`@pages`||X|
