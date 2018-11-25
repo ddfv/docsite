@@ -5,9 +5,13 @@
 安装 Dvan 到你项目中为本地开发依赖.
 ```bash
 cd your-project
-yarn add dvan@next --dev
-# npm i --dev dvan@next
+yarn add vue dvan@next --dev
+# npm i vue dvan@next --save-dev
 ```
+
+::: warning ⚠️
+从 `2.0.0-alpha.17` 需要自行安装 `vue`.
+:::
 
 在`package.json`中添加两条脚本
 ```json
@@ -16,7 +20,10 @@ yarn add dvan@next --dev
     "dev": "dvan dev",
     "build": "dvan build"
   },
-  "devDenpendency": {
+  "denpendencies": {
+    "vue": "^2"
+  },
+  "devDenpendencies": {
     "dvan": "@next"
   }
 }

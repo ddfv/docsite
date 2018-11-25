@@ -4,6 +4,12 @@ sidebar: auto
 
 # 配置选项
 
+## srcDir
+- 类型: `string`
+- 默认值: `src`
+
+App 源文件目录.
+
 ## outDir
 - 类型: `string`
 - 默认值: `__dist`
@@ -30,12 +36,6 @@ sidebar: auto
   - 默认值: `内置模板`
   - 用于生成的 HTML 的模板.
 - ...全部选项参考 [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin#options)
-
-## pagesDir
-- 类型: `string<path>`
-- 默认值: `pages`
-
-存放页面的目录.
 
 ## match
 - 类型: `string` `RegExp`
