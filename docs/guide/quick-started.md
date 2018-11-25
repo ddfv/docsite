@@ -5,9 +5,13 @@
 Install dvan as a local dependency inside a project.
 ```bash
 cd your-project
-yarn add dvan@next --dev
-# npm i --dev dvan@next
+yarn add vue dvan@next --dev
+# npm i vue dvan@next --save-dev
 ```
+
+::: warning
+Since `2.0.0-alpha.17` you need to install `vue` by yourself.
+:::
 
 Then add two scripts to `package.json`
 ```json
@@ -16,7 +20,10 @@ Then add two scripts to `package.json`
     "dev": "dvan dev",
     "build": "dvan build"
   },
-  "devDenpendency": {
+  "denpendencies": {
+    "vue": "^2",
+  },
+  "devDenpendencies": {
     "dvan": "@next"
   }
 }
