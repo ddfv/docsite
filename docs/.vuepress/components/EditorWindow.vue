@@ -7,13 +7,18 @@
       <div class="tabs">
         <div
           class="tab"
-          :class="{ active: currentIndex === index }"
           v-for="(file, index) in files"
           :key="index"
+          :class="{ active: currentIndex === index }"
+          :style="{
+            paddingLeft: (file.menu || 0) * 10 + 10 + 'px',
+            paddingRight: '10px'
+          }"
           @click="currentIndex = index">
           {{ file.name }}
         </div>
       </div>
+        
       <div class="editor-codes">
         <pre><code v-html="code"></code></pre>
       </div>
@@ -36,25 +41,27 @@ export default {
     }
   },
 
-  data () {
+  data() {
     return {
-      currentIndex: 0
+      currentIndex: 3 // index.vue
     }
   },
 
   computed: {
-    currentFile () {
+    currentFile() {
       return this.files[this.currentIndex]
     },
-    code () {
+    code() {
       if (this.currentFile.msg) {
         this.$emit('update:msg', this.currentFile.msg)
       }
-      return Prism.highlight(
-        this.currentFile.code,
-        Prism.languages[this.currentFile.lang],
-        this.currentFile.lang
-      )
+      if (this.currentFile.code) {
+        return Prism.highlight(
+          this.currentFile.code,
+          Prism.languages[this.currentFile.lang],
+          this.currentFile.lang
+        )
+      }
     }
   }
 }
@@ -84,7 +91,6 @@ export default {
 
   .tab
     color rgb(150, 150, 150)
-    padding 0 10px
     height 2em
     line-height 2em
     font-size 13px

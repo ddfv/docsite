@@ -5,7 +5,7 @@
     </div>
     <div class="column">
       <BrowserWindow :address="address">
-        {{ msg }}
+        <div v-html="msg"></div>
       </BrowserWindow>
     </div>
   </div>
@@ -16,45 +16,53 @@ export default {
   data () {
     return {
       address: 'localhost:4000',
+      msg: '',
       files: [
         {
-          name: 'index.vue',
-          msg: 'Hi there!',
+          name: 'src',
+          lang: 'html',
+          code: `pages
+  about.vue
+  index.vue`
+        },
+        {
+          menu: 1,
+          name: 'pages',
+          lang: 'html',
+          code: `about.vue
+index.vue`
+        },
+        {
+          menu: 2,
+          name: 'about.vue',
+          msg: `<h1>Me? I\'m <i>evillt</i>.</h1>`,
           lang: 'html',
           code: `<template>
-  <div>
+  <h1>
+    Me? I\'m
+    <i>evillt</i>.
+  </h1>
+<\/tempalte>`
+        },
+        {
+          menu: 2,
+          name: 'index.vue',
+          msg: '<h1>Hi there! 😋</h1>',
+          lang: 'html',
+          code: `<template>
+  <h1>
     {{ hello }}
-  </div>
+  </h1>
 <\/tempalte>
 <script>
 export default {
-  data () {
+  data() {
     return {
-      hello: 'Hi there!'
+      hello: 'Hi there! 😋'
     }
   }
 }
 <\/script>`
-        },
-        {
-          name: 'about.vue',
-          msg: 'Who? Me?',
-          lang: 'html',
-          code: `<template>
-  <div>
-    Who? Me?
-  </div>
-<\/tempalte>`
-        },
-        {
-          name: 'dvan.config.js',
-          lang: 'js',
-          code: `module.exports = {
-  html: {
-    title: 'App'
-  },
-  pagesDir: './'
-}`
         },
         {
           name: 'package.json',
@@ -69,8 +77,7 @@ export default {
   }
 }`
         }
-      ],
-      msg: ''
+      ]
     }
   }
 }
