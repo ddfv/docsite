@@ -72,6 +72,9 @@ export default {
     "dev": "dvan dev",
     "build": "dvan build"
   },
+  "dependencies": {
+    "vue": "^2.5.17"
+  },
   "devDependencies": {
     "dvan": "@next"
   }
