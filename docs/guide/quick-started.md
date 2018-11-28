@@ -5,8 +5,8 @@
 Install dvan as a local dependency inside a project.
 ```bash
 cd your-project
-yarn add vue dvan@next --dev
-# npm i vue dvan@next --save-dev
+yarn add vue
+yarn add dvan@next --dev
 ```
 
 ::: warning

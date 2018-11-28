@@ -5,8 +5,8 @@
 安装 Dvan 到你项目中为本地开发依赖.
 ```bash
 cd your-project
-yarn add vue dvan@next --dev
-# npm i vue dvan@next --save-dev
+yarn add vue
+yarn add dvan@next --dev
 ```
 
 ::: warning ⚠️
