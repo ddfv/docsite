@@ -24,18 +24,17 @@ The all assets file URL prefix used in generated HTML files. It's usually use to
 
 ## html
 - Type: `object`
+- Default: `DefaultOptions`
 
-Basically options:
+```js
+const DefaultOptions = {
+  template: `built-in-template-path`,
+  filename: 'index.html',
+  title: 'Dvan App'
+}
+```
 
-- title
-  - Type: `string`
-  - Default: `'Dvan App'`
-  - The title for the `<title></title>` in the generated HTML file.
-- template
-  - Type: `string<path>`
-  - Default: `built-in template`
-  - The template HTML file to render the generated HTML file.
-- ...fully options in [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin#options)
+Fully options in [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin#options)
 
 ## match
 - Type: `string` `RegExp`
@@ -50,21 +49,25 @@ It used to match page components.
 Sourcemaps for `.js` and `.css` files are also generated when compiled.
 
 ## minimize
-- Type: `boolean|object`
-- Default: `'auto'` which means `true` in production build, `false` otherwise
+- Type: `boolean | MinimizeOptions`
+- Default: `true` in production mode, `false` otherwise
 
 Minimize bundled `.js` and `.css` files.
-If set it an object please check out the following 2 options
 
-## minimize.js
-- Type: `object`
+```ts
+interface MinimizeOptions {
+  // Options for uglifyjs-webpack-plugin
+  js?: any
+  // Options for optimize-css-assets-webpack-plugin
+  css?: any
+}
+```
 
-Options for [uglifyjs-webpack-plugin](https://www.npmjs.com/package/uglifyjs-webpack-plugin#options)
+See also
 
-## minimize.css
-- Type: `object`
+[uglifyjs-webpack-plugin](https://www.npmjs.com/package/uglifyjs-webpack-plugin#options)
 
-Options for [optimize-css-assets-webpack-plugin](https://www.npmjs.com/package/optimize-css-assets-webpack-plugin)
+[optimize-css-assets-webpack-plugin](https://www.npmjs.com/package/optimize-css-assets-webpack-plugin)
 
 ## constants
 - Type: `object`
@@ -73,34 +76,41 @@ Create global constants which can be configured at compile time.
 
 ## devServer
 - Type: `object`
-- Default: `{ host: '0.0.0.0', port: 4000 }`
-- CLI: `--host --port`
+- Default: `DefaultOptions`
+- CLI: `--host <ip>` `--port <port>`
+
+```js
+const DefaultOptions = {
+  host: '0.0.0.0',
+  port: 4000
+}
+```
 
 Options for [webpack-dev-server](https://webpack.js.org/configuration/dev-server/#devserver)
 
 ## css.extract
 - Type: `boolean`
-- Default: `'auto'` which means `true` in production build, `false` otherwise
+- Default: `true` in production mode, `false` otherwise
 
 Whether to extract CSS into standalone `.css` file(s).
 
 ## css.loaderOptions
-- Type: `object`
+- Type: `LoaderOptions`
 
-```js
-module.exports = {
-  css: {
-    loaderOptions: {
-      // For css-loader
-      css: {},
-      // For sass-loader
-      sass: {},
-      // For less-loader
-      less: {},
-      // For stylus-loader
-      stylus: {}
-    }
-  }
+Options for CSS loaders.
+
+```ts
+interface LoaderOptions {
+  // Options for css-loader
+  css?: any
+  // Options for postcss-loader
+  postcss?: any
+  // Options for sass-loader
+  sass?: any
+  // Options for less-loader
+  less?: any
+  // Options for stylus-loader
+  stylus?: any
 }
 ```
 
