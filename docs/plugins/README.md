@@ -17,15 +17,13 @@ exports.extend = api => {
 
 ### Properties
 
-#### name
+#### name?
 - Type: `String`
-- Required: `false`
 
 Name your plugin to distinguish all plugins in use.
 
 #### extend
-- Type: `(api: PluginAPI, options: any) => void`
-- Required: `true`
+- Type: `(api: PluginAPI) => void`
 
 See [PluginAPI](#plugin-api)
 
