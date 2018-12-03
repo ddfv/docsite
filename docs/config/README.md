@@ -6,19 +6,19 @@ sidebar: auto
 
 ## srcDir
 - Type: `string`
-- Default: `src`
+- Default: `'src'`
 
 The source directory of your App.
 
 ## outDir
 - Type: `string`
-- Default: `__dist`
+- Default: `'__dist'`
 
 The directory to generate App files.
 
 ## publicPath
 - Type: `string`
-- Default: `/`
+- Default: `'/'`
 
 The all assets file URL prefix used in generated HTML files. It's usually use to deploy to a site under sub-path, i.e. `https://yoursite.com/rest/`, that should be set it to `/rest/`.
 
@@ -38,9 +38,15 @@ Fully options in [html-webpack-plugin](https://github.com/jantimon/html-webpack-
 
 ## match
 - Type: `string` `RegExp`
-- Default: `vue,js`
+- Default: `'vue,js'`
 
 It used to match page components.
+
+## routerMode
+- Type: `string`
+- Default: `'hash'` in browser, `'abstract'` in Node.js
+
+Official description see [router.mode](https://router.vuejs.org/api/#mode)
 
 ## sourceMap
 - Type: `boolean`
