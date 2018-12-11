@@ -4,6 +4,10 @@ actionText: Now Go →
 actionLink: /guide/introduction
 ---
 
+::: danger
+This project is rewriting in @insider version. New documentation will release ASAP.
+:::
+
 <HomeExample />
 
 <div class="footer">
