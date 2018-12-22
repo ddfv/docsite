@@ -7,20 +7,20 @@
       <div class="tabs">
         <div
           class="tab"
-          v-for="(file, index) in files"
+          v-for="({ menu, name }, index) in files"
           :key="index"
           :class="{ active: currentIndex === index }"
           :style="{
-            paddingLeft: (file.menu || 0) * 10 + 10 + 'px',
+            paddingLeft: (menu || 0) * 10 + 10 + 'px',
             paddingRight: '10px'
           }"
           @click="currentIndex = index">
-          {{ file.name }}
+          {{ name }}
         </div>
       </div>
-        
+
       <div class="editor-codes">
-        <pre><code v-html="code"></code></pre>
+        <pre><code v-html="code" /></pre>
       </div>
     </div>
   </div>
@@ -43,7 +43,7 @@ export default {
 
   data() {
     return {
-      currentIndex: 3 // index.vue
+      currentIndex: 1 // App.vue
     }
   },
 

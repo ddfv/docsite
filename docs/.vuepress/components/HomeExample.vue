@@ -5,7 +5,7 @@
     </div>
     <div class="column">
       <BrowserWindow :address="address">
-        <div v-html="msg"></div>
+        <div v-html="msg" />
       </BrowserWindow>
     </div>
   </div>
@@ -21,32 +21,11 @@ export default {
         {
           name: 'src',
           lang: 'html',
-          code: `pages
-  about.vue
-  index.vue`
+          code: `App.vue`
         },
         {
           menu: 1,
-          name: 'pages',
-          lang: 'html',
-          code: `about.vue
-index.vue`
-        },
-        {
-          menu: 2,
-          name: 'about.vue',
-          msg: `<h1>Me? I\'m <i>evillt</i>.</h1>`,
-          lang: 'html',
-          code: `<template>
-  <h1>
-    Me? I\'m
-    <i>evillt</i>.
-  </h1>
-<\/tempalte>`
-        },
-        {
-          menu: 2,
-          name: 'index.vue',
+          name: 'App.vue',
           msg: '<h1>Hi there! 😋</h1>',
           lang: 'html',
           code: `<template>
@@ -65,18 +44,30 @@ export default {
 <\/script>`
         },
         {
+          name: 'index.js',
+          lang: 'js',
+          code: `import Vue from 'vue'
+import App from '@/App'
+
+new Vue({
+  el: '#app',
+  render: h => h(App)
+})`
+        },
+        {
           name: 'package.json',
           lang: 'js',
           code: `{
   "script": {
-    "dev": "dvan dev",
-    "build": "dvan build"
+    "dev": "dvan --dev --open",
+    "build": "dvan --prod"
   },
   "dependencies": {
-    "vue": "^2.5.17"
+    "vue": "..."
   },
   "devDependencies": {
-    "dvan": "@next"
+    "dvan": "^2.1.0",
+    "vue-template-compiler": "..."
   }
 }`
         }

@@ -1,8 +1,8 @@
 <template>
   <div class="traffic-light">
-    <span class="dot" :class="{ 'dot-red': focus }"></span>
-    <span class="dot" :class="{ 'dot-yellow': focus }"></span>
-    <span class="dot" :class="{ 'dot-green': focus }"></span>
+    <span class="dot" :class="{ 'dot-red': focus }" />
+    <span class="dot" :class="{ 'dot-yellow': focus }" />
+    <span class="dot" :class="{ 'dot-green': focus }" />
   </div>
 </template>
 
