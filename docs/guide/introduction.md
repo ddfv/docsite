@@ -1,8 +1,7 @@
 # Introduction
-Dvan is an App bundler powered by Vue and webpack.
+Dvan is an App bundler powered by webpack.
 
 ![NPM Version](https://flat.badgen.net/npm/v/dvan?icon=npm)
-![NPM Next Version](https://flat.badgen.net/npm/v/dvan/next?icon=npm)
 ![NPM Downloads](https://flat.badgen.net/npm/dt/dvan)
 ![NPM License](https://flat.badgen.net/npm/license/dvan)
 

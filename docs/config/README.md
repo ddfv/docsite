@@ -4,27 +4,38 @@ sidebar: auto
 
 # Config
 
+## entry
+- Type: `string`
+- Default: `index`
+- CLI: `dvan [...entries]`
+
+Entry file(s).
+
 ## srcDir
 - Type: `string`
 - Default: `'src'`
+- CLI: `-s, --src-dir <dir>`
 
 The source directory of your App.
 
 ## outDir
 - Type: `string`
 - Default: `'__dist'`
+- CLI: `-d, --out-dir <dir>`
 
 The directory to generate App files.
 
 ## publicPath
 - Type: `string`
 - Default: `'/'`
+- CLI: `--public-path <path>`
 
 The all assets file URL prefix used in generated HTML files. It's usually use to deploy to a site under sub-path, i.e. `https://yoursite.com/rest/`, that should be set it to `/rest/`.
 
 ## html
 - Type: `object`
 - Default: `DefaultOptions`
+- CLI: `--html[option] [value]` e.g. `--html.title myApp`
 
 ```js
 const DefaultOptions = {
@@ -36,47 +47,38 @@ const DefaultOptions = {
 
 Fully options in [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin#options)
 
-## match
-- Type: `string` `RegExp`
-- Default: `'vue,js'`
-
-It used to match page components.
-
-## routerMode
-- Type: `string`
-- Default: `'hash'` in browser, `'abstract'` in Node.js
-
-Official description see [router.mode](https://router.vuejs.org/api/#mode)
-
 ## sourceMap
 - Type: `boolean`
 - Default: `true`
+- CLI: `--[no-]source-map`
 
 Sourcemaps for `.js` and `.css` files are also generated when compiled.
 
 ## minimize
 - Type: `boolean | MinimizeOptions`
 - Default: `true` in production mode, `false` otherwise
+- CLI: `--[no-]minimize`
 
 Minimize bundled `.js` and `.css` files.
 
 ```ts
 interface MinimizeOptions {
-  // Options for uglifyjs-webpack-plugin
+  // Options for terser-webpack-plugin
   js?: any
-  // Options for optimize-css-assets-webpack-plugin
+  // Options for optimize-cssnano-plugin
   css?: any
 }
 ```
 
 See also
 
-[uglifyjs-webpack-plugin](https://www.npmjs.com/package/uglifyjs-webpack-plugin#options)
+[terser-webpack-plugin#options](https://github.com/webpack-contrib/terser-webpack-plugin#options)
 
-[optimize-css-assets-webpack-plugin](https://www.npmjs.com/package/optimize-css-assets-webpack-plugin)
+[optimize-cssnano-plugin](https://github.com/intervolga/optimize-cssnano-plugin)
 
 ## constants
 - Type: `object`
+- CLI: `--constants[option] [value]`
 
 Create global constants which can be configured at compile time.
 
@@ -97,35 +99,35 @@ Options for [webpack-dev-server](https://webpack.js.org/configuration/dev-server
 ## css.extract
 - Type: `boolean`
 - Default: `true` in production mode, `false` otherwise
+- CLI: `--[no-]extract-css`
 
 Whether to extract CSS into standalone `.css` file(s).
 
-## css.loaderOptions
+## loaderOptions
 - Type: `LoaderOptions`
 
-Options for CSS loaders.
+Options for using loaders.
 
 ```ts
 interface LoaderOptions {
-  // Options for css-loader
   css?: any
-  // Options for postcss-loader
   postcss?: any
-  // Options for sass-loader
   sass?: any
-  // Options for less-loader
   less?: any
-  // Options for stylus-loader
   stylus?: any
+  babel?: any,
+  vue?: any,
+  artTemplate?: any
 }
 ```
 
 ## jsx
-- Type: `boolean`
+- Type: `boolean|string`
 - Default: `false`
-- CLI: `--jsx`
+- Values: `true|react` `vue` `h` or other JSX pragma
+- CLI: `--jsx [syntax]`
 
-Make app support JSX syntax. See [jsx-guide](/guide/advanced/jsx.md).
+<!-- Make app support JSX syntax. See [jsx-guide](/guide/advanced/jsx.md). -->
 
 ## chainWebpack
 - Type: `(config => WebpackChain, opts: Opts) => void`
