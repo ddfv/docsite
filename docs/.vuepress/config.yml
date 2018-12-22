@@ -1,5 +1,5 @@
 title: Dvan
-description: Config-free to build your Vue App
+description: Simple way to web development.
 contentLoading: true
 host: '192.168.31.178'
 
@@ -16,7 +16,6 @@ themeConfig:
   docsDir: docs
   editLinks: true
   lastUpdated: true
-  displayAllHeaders: true
   locales:
     /:
       selectText: Languages
@@ -38,12 +37,13 @@ themeConfig:
           children:
             - /guide/introduction
             - /guide/quick-started
+            - /guide/frameworks
             - /guide/configuration
             - /guide/directory-structure
-        - title: Advanced
-          collapsable: false
-          children:
-            - /guide/advanced/jsx
+        # - title: Advanced
+        #   collapsable: false
+        #   children:
+        #     - /guide/advanced/jsx
     /zh/:
       selectText: 选择语言
       label: 简体中文
