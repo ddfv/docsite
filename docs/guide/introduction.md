@@ -1,9 +1,10 @@
 # Introduction
 Dvan is an App bundler powered by webpack.
 
-![NPM Version](https://flat.badgen.net/npm/v/dvan?icon=npm)
-![NPM Downloads](https://flat.badgen.net/npm/dt/dvan)
-![NPM License](https://flat.badgen.net/npm/license/dvan)
+![NPM Version](https://badgen.net/npm/v/dvan?icon=npm)
+![NPM Downloads](https://badgen.net/npm/dm/dvan)
+![NPM License](https://badgen.net/npm/license/dvan)
+![Download Size](https://packagephobia.now.sh/badge?p=dvan)
 
 ## Features
 - 🚀 No config required until you need

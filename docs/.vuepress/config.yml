@@ -1,7 +1,6 @@
 title: Dvan
-description: Simple way to web development.
+description: Yet another config free JavaScript bundler.
 contentLoading: true
-host: '192.168.31.178'
 
 locales:
   /: {}

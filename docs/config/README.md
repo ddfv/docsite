@@ -2,6 +2,12 @@
 sidebar: auto
 ---
 
+::: warning
+This config guide now is out-of-date.
+
+The new version is in Work-In-Progress.
+:::
+
 # Config
 
 ## entry
@@ -115,8 +121,8 @@ interface LoaderOptions {
   sass?: any
   less?: any
   stylus?: any
-  babel?: any,
-  vue?: any,
+  babel?: any
+  vue?: any
   artTemplate?: any
 }
 ```
